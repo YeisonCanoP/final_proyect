@@ -138,7 +138,7 @@ class ViewLogin:
             bgcolor="white",
             ref=self.refContainerGoogle,
             on_hover=lambda e: Utils().on_hover(e, scale=1.1),
-            col = {"xs":8,"sm":8,"md":5.3,"lg":5.3,"xl":4,"xxl":4.5},
+            col = {"xs":8,"sm":8,"md":5.3,"lg":5.3,"xl":4.5,"xxl":4.5},
             padding=ft.padding.only(left=10, right=10),
             border_radius=15,
             on_click=lambda _: print("Click en el pie del container"),
@@ -197,7 +197,8 @@ class ViewLogin:
                 #Container de encabezado
                 ft.Container(
                     height=None,
-                    alignment=ft.alignment.top_center,
+                    margin=ft.margin.only(top=10),
+                    alignment=ft.alignment.center,
                     ref=self.refContainerEncabezado,
                     content=self.create_encabezado()
                 ),
@@ -226,7 +227,7 @@ class ViewLogin:
                 ft.Column(
                     expand=True,
                     alignment=ft.MainAxisAlignment.CENTER,
-                    col ={"xs":9,"sm":7.5,"md":7.5,"lg":6,"xl":5.5,"xxl":4},
+                    col ={"xs":9,"sm":7.5,"md":7.5,"lg":6,"xl":4.5,"xxl":4},
                     controls=[
                         ft.Container(
                             expand=3,

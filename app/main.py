@@ -12,7 +12,6 @@ def main(page: ft.Page):
 
     def page_resize(e):
         height = page.height
-        print(f"Height: {height}")
         responsi = ResponsiLogin(view)
         responsi.update_height(height)
 
