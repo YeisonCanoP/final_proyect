@@ -75,6 +75,7 @@ class ResponsiLogin:
         elif height < 1200:
             self.refTitulo.current.size = 30
             self.refContainerEncabezado.current.height = height * 0.08
+            self.refContainerCuerpo.current.height = height * 0.38
             self.update_heightCuerpo(height)
             self.update_heightFooter(height)
         elif height < 1400:

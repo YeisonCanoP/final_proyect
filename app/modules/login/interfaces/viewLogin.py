@@ -292,4 +292,3 @@ class ViewLogin:
         )
         self.page.padding = 0
         self.page.expand = True
-        self.page.update()
