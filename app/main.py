@@ -6,10 +6,10 @@ from app.modules.login.interfaces.viewLogin import ViewLogin
 #El nombre de la aplicacion es vizora
 
 def main(page: ft.Page):
-
+    page.expand = True
     view = ViewLogin(page)
     view.create_login()
     page.update()
 
 
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main,view=ft.WEB_BROWSER,assets_dir="app/assets")

@@ -2,8 +2,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 import os 
 import sys
-from utils.singleton import SingletonMeta
 sys.path.append("c:/Users/yeiso/OneDrive/Escritorio/Proyecto/final_proyect")
+from utils.singleton import SingletonMeta
 
 #Clase para manejar la creacion de logs y almacenarlos en un archivo de la aplicacion
 class Logger(metaclass=SingletonMeta):
