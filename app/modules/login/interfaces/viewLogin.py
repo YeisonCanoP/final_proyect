@@ -4,7 +4,7 @@ sys.path.append('c:/Users/yeiso/OneDrive/Escritorio/Proyecto/final_proyect')
 from app.utils.logger import Logger
 from app.utils.builder import Builder
 from app.utils.utils import Utils
-from app.modules.login.logic.login import LogicLogin
+from app.core.login import LogicLogin
 
 #Clase para menjar al creacion del login en flet Vizora 
 class ViewLogin:
