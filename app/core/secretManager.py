@@ -34,3 +34,27 @@ class SecretManager:
         secret = get_secret_value_response['SecretString']
         password = json.loads(secret).get('password')
         return password
+
+    def get_secretGoogle(self):
+
+        secret_name = "prod/appTech/vizora"
+        region_name = "us-east-1"
+
+        # Create a Secrets Manager client
+        session = boto3.session.Session()
+        client = session.client(
+            service_name='secretsmanager',
+            region_name=region_name
+        )
+
+        try:
+            get_secret_value_response = client.get_secret_value(
+                SecretId=secret_name
+            )
+        except ClientError as ex:
+            raise ex
+
+        secret = get_secret_value_response['SecretString']
+        secret_dict = json.loads(secret)
+        self.log.info(f"Secret retrieved: {secret_dict}")
+        return secret_dict

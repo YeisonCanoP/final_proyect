@@ -4,7 +4,7 @@ sys.path.append('c:/Users/yeiso/OneDrive/Escritorio/Proyecto/final_proyect')
 from app.utils.logger import Logger
 from app.utils.builder import Builder
 from app.utils.utils import Utils
-
+from app.modules.login.logic.login import LogicLogin
 
 #Clase para menjar al creacion del login en flet Vizora 
 class ViewLogin:
@@ -121,8 +121,8 @@ class ViewLogin:
                                 tamañoText=15,
                                 bgcolor=self.colorLetra,
                                 text="Iniciar Sesión",
-                                on_click=None, # Aquí puedes agregar la función que maneja el clic
-                                hover= lambda e:Utils().on_hover(e, scale=1.05),
+                                on_click=None,
+                                hover= lambda e:Utils().on_hover(e, scale=1.05)
                             )
                         ),
                     ]
@@ -141,7 +141,7 @@ class ViewLogin:
             col = {"xs":8,"sm":8,"md":5.3,"lg":5.3,"xl":4.5,"xxl":4.5},
             padding=ft.padding.only(left=10, right=10),
             border_radius=15,
-            on_click=lambda _: print("Click en el pie del container"),
+            on_click=lambda e:LogicLogin().login_google(e),
             content=ft.ResponsiveRow(
                 alignment=ft.MainAxisAlignment.CENTER,
                 vertical_alignment=ft.CrossAxisAlignment.CENTER,
@@ -280,16 +280,8 @@ class ViewLogin:
             ]
         )
 
-        self.page.add(
-            fondo_contenido
+        return ft.View(
+            "/",
+            controls=[fondo_contenido],
+            padding=0,
         )
-        self.page.fonts = {
-            "NotoSans": "fonts/NotoSans/NotoSans-VariableFont_wdth,wght.ttf",
-            "Poppins": "fonts/Poppins/Poppins-Regular.ttf.ttf",
-            "PoppinsBold": "fonts/Poppins/Poppins-Bold.ttf",
-        }
-        self.page.theme = ft.Theme(
-            font_family="Poppins",
-        )
-        self.page.padding = 0
-        self.page.expand = True

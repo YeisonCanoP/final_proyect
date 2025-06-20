@@ -7,8 +7,9 @@ class LogicLogin:
 
     def __init__(self):
         self.log = Logger("app/logs/Login.log").get_logger()
-
+        self.url = "http://localhost:8000/cognito/login"
     
-    #Funcion para validar el login
-    def validate_login(self):
-        
+    #Funcion para iniciar con google
+    def login_google(self,e):
+        e.page.launch_url(self.url)
+
