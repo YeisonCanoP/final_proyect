@@ -141,7 +141,7 @@ class ViewLogin:
             col = {"xs":8,"sm":8,"md":5.3,"lg":5.3,"xl":4.5,"xxl":4.5},
             padding=ft.padding.only(left=10, right=10),
             border_radius=15,
-            on_click=lambda e:LogicLogin().login_google(e),
+            on_click=lambda e: LogicLogin().login_google(e),
             content=ft.ResponsiveRow(
                 alignment=ft.MainAxisAlignment.CENTER,
                 vertical_alignment=ft.CrossAxisAlignment.CENTER,

@@ -56,5 +56,4 @@ class SecretManager:
 
         secret = get_secret_value_response['SecretString']
         secret_dict = json.loads(secret)
-        self.log.info(f"Secret retrieved: {secret_dict}")
         return secret_dict
