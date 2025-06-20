@@ -57,3 +57,26 @@ class SecretManager:
         secret = get_secret_value_response['SecretString']
         secret_dict = json.loads(secret)
         return secret_dict
+
+    def get_secretJWT(self):
+
+        secret_name = "prod/appTech/vizora/token_JWT"
+        region_name = "us-east-1"
+
+        # Create a Secrets Manager client
+        session = boto3.session.Session()
+        client = session.client(
+            service_name='secretsmanager',
+            region_name=region_name
+        )
+
+        try:
+            get_secret_value_response = client.get_secret_value(
+                SecretId=secret_name
+            )
+        except ClientError as ex:
+            raise ex
+
+        secret = get_secret_value_response['SecretString']
+        secret_dict = json.loads(secret)["secret_JWT"]
+        return secret_dict

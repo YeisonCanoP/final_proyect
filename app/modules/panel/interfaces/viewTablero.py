@@ -1,7 +1,9 @@
+import asyncio
 import sys
 import flet as ft
 sys.path.append('c:/Users/yeiso/OneDrive/Escritorio/Proyecto/final_proyect')
 from app.utils.logger import Logger
+from app.modules.login.logic.login import LogicLogin
 
 #Clase para manejar la construccion de la vista de tablero
 class ViewTablero:
@@ -30,7 +32,7 @@ class ViewTablero:
                 "/tablero",
                 [
                     container,
-                    ft.TextButton("Volver", on_click=lambda _: self.page.go("/"))
+                    ft.TextButton("Volver", on_click=lambda e: asyncio.run(LogicLogin().logout(e)))
                 ],
                 padding=20,
                 bgcolor=ft.Colors.LIGHT_BLUE_50,
